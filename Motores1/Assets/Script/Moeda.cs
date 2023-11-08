@@ -5,11 +5,17 @@ using UnityEngine;
 public class Moeda : MonoBehaviour
 {
     public int velocidadeGiro = 150;
+
     // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            FindObjectOfType<GameManager>().SubtrairMoedas(1);
             Destroy(gameObject);
         }
     }
@@ -17,6 +23,6 @@ public class Moeda : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.forward * velocidadeGiro * Time.deltaTime);
+        transform.Rotate(Vector3.forward * velocidadeGiro * Time.deltaTime, Space.World);
     }
 }
