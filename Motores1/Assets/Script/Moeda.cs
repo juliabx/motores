@@ -11,7 +11,7 @@ public class Moeda : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -23,6 +23,6 @@ public class Moeda : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.forward * velocidadeGiro * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.up * velocidadeGiro * Time.deltaTime, Space.World);
     }
 }

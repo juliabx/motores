@@ -7,7 +7,7 @@ public class GameManager: MonoBehaviour
 {
     public TextMeshProUGUI hud, msgVitoria;
     public int restantes;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +18,9 @@ public class GameManager: MonoBehaviour
 
     public void SubtrairMoedas(int valor)
     {
-        restantes -= valor;
+        restantes = restantes -= valor;
         hud.text = $"Moedas restantes: {restantes}";
+        
         
         if (restantes <= 0)
         {

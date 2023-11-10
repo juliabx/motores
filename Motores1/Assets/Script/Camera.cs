@@ -10,6 +10,7 @@ public class Camera : MonoBehaviour
     void Start()
     {
         alvo = GameObject.FindWithTag("Player").transform;
+        
         offset = alvo.position - transform.position;
     }
 
